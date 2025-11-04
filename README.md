@@ -1,18 +1,18 @@
 # Ascon-AEAD128 --- SystemVerilog Implementation
 
-This repository contains a **SystemVerilog model of the Ascon-AEAD128
-authenticated encryption algorithm**, developed as part of a *Digital
-System Design* project.\
+This repository contains a SystemVerilog model of the Ascon-AEAD128
+authenticated encryption algorithm, developed as part of a Digital
+System Design project.\
 The objective is to reproduce the behavior of the Ascon algorithm ---
-selected by the **NIST (National Institute of Standards and
-Technology)** as a cryptographic standard --- using hardware description
+selected by the NIST (National Institute of Standards and
+Technology) as a cryptographic standard --- using hardware description
 techniques.
 
 ## Overview
 
-**Ascon-AEAD128** is an *Authenticated Encryption with Associated Data
-(AEAD)* algorithm.
-It ensures both **confidentiality** and **authenticity** of messages by
+Ascon-AEAD128 is an Authenticated Encryption with Associated Data
+(AEAD) algorithm.
+It ensures both confidentiality and authenticity of messages by
 producing a verification tag.
 
 The SystemVerilog model implements all the main components of the
@@ -27,7 +27,7 @@ algorithm:
 
 ## Algorithm Description
 
-The algorithm operates on a **320-bit internal state**, divided into
+The algorithm operates on a 320-bit internal state, divided into
 five 64-bit registers:
 
     S = {S0, S1, S2, S3, S4}
@@ -91,10 +91,11 @@ The encryption process includes four main phases:
 
 ## Simulation
 
-Each module was verified through waveform simulations: - Constant
-addition, substitution, and diffusion were tested individually.
+Each module was verified through waveform simulations: 
+- Constant addition, substitution, and diffusion were tested individually.
 - The permutation module and state machine were validated through
 simulation of multiple rounds.
 - The top-level testbench (`ascon_top_tb.sv`) integrates all modules to
 produce final encryption outputs.
+
 
